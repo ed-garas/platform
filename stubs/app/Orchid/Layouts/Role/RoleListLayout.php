@@ -15,7 +15,7 @@ class RoleListLayout extends Table
     /**
      * @var string
      */
-    public $target = 'roles';
+    public $target = 'orchid_roles';
 
     /**
      * @return TD[]

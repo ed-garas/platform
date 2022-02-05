@@ -22,7 +22,7 @@ class CreateOrchidRoleUsersTable extends Migration
                 ->onDelete('cascade');
             $table->foreign('role_id')
                 ->references('id')
-                ->on('roles')
+                ->on('orchid_roles')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
