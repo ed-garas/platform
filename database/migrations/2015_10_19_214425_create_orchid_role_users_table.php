@@ -12,14 +12,18 @@ class CreateOrchidRoleUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('role_users', function (Blueprint $table) {
+        Schema::create('orole_users', function (Blueprint $table) {
             $table->foreignUuid('user_id')
                 ->constrained('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-            $table->foreignId('orchid_role_id')
-                ->constrained('orchid_roles')
+            $table->unsignedInteger('orole_id');
+            $table->primary(['user_id', 'orole_id']);
+
+            $table->foreign('orole_id')
+                ->references('id')
+                ->on('oroles')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
@@ -30,6 +34,6 @@ class CreateOrchidRoleUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role_users');
+        Schema::dropIfExists('orole_users');
     }
 }

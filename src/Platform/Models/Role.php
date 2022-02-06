@@ -19,7 +19,7 @@ class Role extends Model implements RoleInterface
     /**
      * @var string
      */
-    protected $table = 'orchid_roles';
+    protected $table = 'oroles';
 
     /**
      * @var array
