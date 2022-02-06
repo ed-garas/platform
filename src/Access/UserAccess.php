@@ -39,7 +39,7 @@ trait UserAccess
      */
     public function roles(): BelongsToMany
     {
-        return $this->belongsToMany(Dashboard::model(Role::class), 'role_users', 'user_id', 'role_id');
+        return $this->belongsToMany(Dashboard::model(Role::class), 'orole_users', 'user_id', 'orole_id');
     }
 
     /**
